@@ -28,10 +28,10 @@ def read_dataset(data_type,dim):
                 lbl_out = np.zeros(10)
                 lbl_out[int(symbol)] = 1
                 print(img_count)
-                data_set.append(res)
+                data_set.append(res/np.max(res))
                 labels.append(lbl_out)
 
-    data=np.array(data_set)/255 #np array ashan feeh features ktiir
+    data=np.array(data_set) #np array ashan feeh features ktiir
     labels=np.array(labels)
     np.save('data_set',data)
     np.save('labels',labels)
